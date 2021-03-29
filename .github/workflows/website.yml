@@ -31,12 +31,30 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
+      - name: Cache yarn
+        uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('docs/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
-      - run: yarn test
-      - run: yarn lint --max-warnings 0
+      - name: Lint
+        run: yarn lint --max-warnings 0
+      - name: Run tests
+        run: yarn test
+      - name: Build production website
+        run: yarn build --prefix-paths
+      - name: Deploy website
+        if: ${{ github.event.ref == 'refs/heads/main' }}
+        uses: appleboy/scp-action@master
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+        with:
+          source: website/public/
+          target: /home/${{ secrets.USERNAME }}/apache-server/public_html/home
+          rm: true # remove old website contents
+          strip_components: 2 # remove website/public/ prefix

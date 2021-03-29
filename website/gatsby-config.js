@@ -5,7 +5,12 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  assetPrefix: '/home',
+  siteMetadata: {
+    title: `Bartłomiej Klocek`,
+    description: `Bartłomiej Klocek - A Software Engineer`,
+    author: `Bartłomiej Klocek`,
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-prettier-eslint',
@@ -32,5 +37,10 @@ module.exports = {
     },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
+    // Temporarily disabled
+    // Apache mod_rewrite, assetPrefix and this plugin
+    // do not work well together
+    //'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
   ],
 };

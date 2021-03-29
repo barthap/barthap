@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  assetPrefix: '/home',
   siteMetadata: {
     title: `Bartłomiej Klocek`,
     description: `Bartłomiej Klocek - A Software Engineer`,
@@ -36,7 +37,10 @@ module.exports = {
     },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    // Temporarily disabled
+    // Apache mod_rewrite, assetPrefix and this plugin
+    // do not work well together
+    //'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
   ],
 };

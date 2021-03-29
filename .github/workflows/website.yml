@@ -6,14 +6,14 @@ defaults:
     working-directory: website
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   push:
-    branches: [$default-branch]
+    branches: [main]
     paths:
       - "website/**"
       - ".github/workflows/website.yml"
   pull_request:
-    branches: [$default-branch]
+    branches: [main]
     paths:
       - "website/**"
       - ".github/workflows/website.yml"

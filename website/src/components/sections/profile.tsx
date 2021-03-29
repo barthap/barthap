@@ -29,8 +29,8 @@ const ProfileSection: React.FC<Props> = ({
       <div className="fullName">{fullName}</div>
       <div className="profileCaption">{caption}</div>
       <div className="mediaLinks">
-        {profileLinks.map(({ iconComponent, href }) => (
-          <a target="blank" href={href}>
+        {profileLinks.map(({ iconComponent, href }, index) => (
+          <a target="blank" href={href} key={index}>
             <span className="circle">
               {React.cloneElement(iconComponent, {
                 className: [iconComponent.props.className, 'icon'].join(' '),

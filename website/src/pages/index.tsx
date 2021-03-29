@@ -6,7 +6,7 @@ import { Content, Layout } from '../components/layout';
 import ProfileSection from '../components/sections/profile';
 
 const profileInfo = {
-  fullName: 'Bartłomiej Klocek',
+   fullName: 'Bartłomiej Klocek',
   caption: 'Software Developer',
   email: 'bartlomiej.klocek@swmansion.com',
   profileImageUrl: profilePhoto,

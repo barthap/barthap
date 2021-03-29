@@ -5,7 +5,11 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `Bartłomiej Klocek`,
+    description: `Bartłomiej Klocek - A Software Engineer`,
+    author: `Bartłomiej Klocek`,
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-prettier-eslint',
@@ -32,5 +36,7 @@ module.exports = {
     },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
   ],
 };

@@ -5,7 +5,7 @@ import profilePhoto from '../assets/images/profilePhoto.jpg';
 import { Content, Layout } from '../components/layout';
 import ProfileSection from '../components/sections/profile';
 
-const profileInfo: U = {
+const profileInfo = {
   fullName: 'Bartłomiej Klocek',
   caption: 'Software Developer',
   email: 'bartlomiej.klocek@swmansion.com',

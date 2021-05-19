@@ -1,6 +1,8 @@
 ### Hi there 👋
 
-> When you need to send a directory from a Windows PC to Mac, but you are too lazy to reach your mouse:
+<details>
+<summary> When you need to send a directory from a Windows PC to Mac, but you are too lazy to reach your mouse (click to expand)</summary>
+  
 > Open WSL terminal
 > ```sh
 > cd /mnt/c/your_files
@@ -14,6 +16,9 @@
 > tar -xvf files.tgz target_directory/ && cd target_directory
 > ```
 > You done, but remember to remove `files.tgz` from SSH server one day...
+  
+  </details>  
+  
 <!--
 **barthap/barthap** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

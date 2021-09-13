@@ -17,6 +17,10 @@ const profileInfo = {
       iconComponent: <icon.IoLogoGithub title="GitHub" />,
     },
     {
+      href: 'https://twitter.com/barthap10',
+      iconComponent: <icon.IoLogoTwitter title="Twitter" />,
+    },
+    {
       href: 'https://www.linkedin.com/in/bartlomiej-klocek/',
       iconComponent: <icon.IoLogoLinkedin title="LinkedIn" />,
     },
